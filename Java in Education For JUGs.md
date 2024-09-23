@@ -25,12 +25,18 @@ p.8〜28 Java8以降のエンハンスメントの紹介
 - それはなぜJavaが現在の全レベルの学校で教えられるべき言語であるかについてです
 
 ## JShell
+* 起動の仕方と簡単な説明くらいにとどめておく
+    - なんか書きました。
+        - https://github.com/mumian1014/MyFirstJava/blob/main/20230702_javajo.md 
 ## Launch Multi-File Source-Code Programs（JEP 458）
 ## Preview Features
 ## Implicitly Declared Classes and Instance Main Methods
 ## var
+* JShellを使ったサンプル
 ## text blocks
+* テキストのサンプルのみでよいのでは？（before, afterの比較）
 ## switch
+* JShellのハンズオンとbefore,afterの比較
 ### an expression & without a break
 ### The pattern matching switch
 ## records
