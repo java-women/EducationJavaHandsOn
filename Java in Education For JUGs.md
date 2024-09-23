@@ -24,23 +24,43 @@ p.8〜28 Java8以降のエンハンスメントの紹介
 - これらのエンハンスメントは、Java を取り巻く誤解の一部を払拭するのに役立ちます
 - それはなぜJavaが現在の全レベルの学校で教えられるべき言語であるかについてです
 
-## JShell
+## 前提
+* 基本的にはJShellでできるようにしておく。(最低限)
+* mdで作成しておいて、あとでスライドに転記する。(google slide)
+    - 発表用の資料 
+    - 手元で見てもらう用の資料
+
+## JShell (1 min)
 * 起動の仕方と簡単な説明くらいにとどめておく
     - なんか書きました。
         - https://github.com/mumian1014/MyFirstJava/blob/main/20230702_javajo.md 
-## Launch Multi-File Source-Code Programs（JEP 458）
-## Preview Features
-## Implicitly Declared Classes and Instance Main Methods
-## var
+## Launch Multi-File Source-Code Programs（JEP 458）(5 min)　★
+* 説明 + 事前に動かせるサンプルを事前に用意(sample project)
+
+## Preview Features (5 min)　★
+* Implicitly Declared Classes and Instance Main Methodsの説明の中に含める。
+## Implicitly Declared Classes and Instance Main Methods (時間はPreview Featuresに含める)　
+* before, afterの比較
+
+## var (3 min)
 * JShellを使ったサンプル
-## text blocks
+
+## text blocks (1 min)　★
 * テキストのサンプルのみでよいのでは？（before, afterの比較）
-## switch
+
+## records (5 min)　★
+* 最低限、JShellで動かせるようにする。
+* リポジトリにサンプルコードを用意しておく。(IDEでやりたいひとはこちら、みたいな感じ。）
+
+## switch (8 min) ★
 * JShellのハンズオンとbefore,afterの比較
-### an expression & without a break
-### The pattern matching switch
-## records
-## Virtuous Virtual Threads
+ 
+### an expression & without a break (時間はswichに含める)
+
+### The pattern matching switch (時間はswichに含める)
+
+## Virtuous Virtual Threads (2 min)　★
+* 深くは触れない。
 
 # What’s Pushing Java Aside?
 p.29〜32 教育においてJavaが押し除けられている理由（教育現場でよく使われるJavaScript、Pythonとの比較）
