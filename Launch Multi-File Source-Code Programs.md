@@ -34,3 +34,11 @@
 
 - Java11 [JEP330](https://openjdk.org/jeps/330)
 - Java22 [JEP458](https://openjdk.org/jeps/458)
+
+## memo
+
+- 11(330)、22(458) の関係
+- サンプル
+  - シングルファイル実行(JavaCalculations03.java で良い？)
+  - マルチファイル実行（JEP458 の Prog, Helper のサンプルでよさそう）
+  - jar を含めた実行(jar を github で管理するのは如何なものか、というところはあるけれども。)
