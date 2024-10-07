@@ -8,6 +8,9 @@
 
 不変データオブジェクトをアプリケーションの基本として考えていく。
 
+## メリット
+- コードの記述量が減る
+- コードの可読性が上がる
 
 
 ### 以下、スライドの説明文を翻訳した内容
@@ -81,4 +84,32 @@ public class Person {
 public record Person(String name, int age, String address) {
     // コンストラクタ、getter、equals、hashCode、toStringが自動生成される
 }
+```
+
+##　　JShellでやってみよう
+```java
+public record Person(String name, int age, String address) {}
+```
+```java
+var marika = new Person("marika",34,"Tokyo");
+```
+```java
+marika.setName("Shiotsuki");
+```
+これが出たらOK！
+
+```java
+|  エラー:
+|  シンボルを見つけられません
+|    シンボル:   メソッド setName(java.lang.String)
+|    場所: タイプPersonの変数 marika
+|  marika.setName("Shiotsuki");
+|  ^------------^
+```
+```java
+marika.age();
+これが出たらOK！
+```
+```java
+$3 ==> 34
 ```
