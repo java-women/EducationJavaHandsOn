@@ -19,14 +19,14 @@
 - Recordクラスは暗黙的にfinalである。   
 - Recordはabstractとして宣言できない
 
-## Recordの使用シナリオ
+## Recordの使用ポイント
 - データ転送オブジェクト（DTO）: APIレスポンスやデータベース結果のマッピングに最適
-- 複数の戻り値: メソッドから複数の値を返す際に、ad-hocなタプルの代わりに使用可能（ここピンときてない）
+- 複数の戻り値: メソッドから複数の値を返す際に、アドホックなタプルの代わりに使用可能
 - イミュータブルな値オブジェクト: 日付範囲や座標など、変更不可能な値を表現するのに最適
-- パターンマッチング: Java 16以降で導入されたパターンマッチング機能と組み合わせて使用　（多分これがメイン）
+- パターンマッチング: Java 16以降で導入されたパターンマッチング機能と組み合わせて使用　（これが一番のモチベ）
 
 
-### 以下、スライドの説明文を翻訳した内容
+### 以下、スライドの説明文を翻訳した内容（スライド時には削除）
 JavaBeanスタイルのクラスは、データを保持するための設計として広く使われてきました。  
 多くのフレームワークは、セッター、ゲッター、hashCode、equals、toStringメソッドを備えたクラスに依存しています。  
 しかし、現代のプログラミングモデルは、可変クラスではなく、不変のBeanに移行しています。  
@@ -110,10 +110,7 @@ var marika = new Person("marika",34,"Tokyo");
 ```java
 // フィールドへのsetter禁止
 marika.setName("Shiotsuki");
-```
-これが出たらOK！
-
-```java
+// error
 |  エラー:
 |  シンボルを見つけられません
 |    シンボル:   メソッド setName(java.lang.String)
@@ -124,18 +121,20 @@ marika.setName("Shiotsuki");
 ```java
 // フィールドのgetter生成
 marika.age();
-これが出たらOK！
-```
-```java
+// result
 $3 ==> 34
 ```
 ```java
 // toString()メソッドの自動実装
 System.out.println(marika); 
+// result
+$4 ==> Person[name=marika, age=34, address=Tokyo]
 ```
 ```java
 // レコード型かの確認
 System.out.println(Person.class.isRecord()); 
+// result
+$5 ==> true
 ```
 ```java
 // レコード型の場合のクラスの形取得
@@ -143,6 +142,10 @@ var components = Person.class.getRecordComponents();
 for (var component : components) {
     System.out.println(component.getName() + ": " + component.getType().getSimpleName());
 }
+// result
+$6 ==> name: String
+$7 ==> age: int
+$8 ==> address: String
 ```
 
 ## 参考
