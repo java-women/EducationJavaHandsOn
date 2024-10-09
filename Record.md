@@ -12,6 +12,19 @@
 - コードの記述量が減る
 - コードの可読性が上がる
 
+## 制約
+- Recordのインスタンスフィールド(Recordヘッダに記述されたコンポーネントに対応)は暗黙的にfinalである
+- 他のインスタンスフィールドを持つことはできない
+- 他のクラスをextend（継承）することはできない
+- Recordクラスは暗黙的にfinalである。   
+- Recordはabstractとして宣言できない
+
+## Recordの使用シナリオ
+- データ転送オブジェクト（DTO）: APIレスポンスやデータベース結果のマッピングに最適
+- 複数の戻り値: メソッドから複数の値を返す際に、ad-hocなタプルの代わりに使用可能（ここピンときてない）
+- イミュータブルな値オブジェクト: 日付範囲や座標など、変更不可能な値を表現するのに最適
+- パターンマッチング: Java 16以降で導入されたパターンマッチング機能と組み合わせて使用　（多分これがメイン）
+
 
 ### 以下、スライドの説明文を翻訳した内容
 JavaBeanスタイルのクラスは、データを保持するための設計として広く使われてきました。  
@@ -91,9 +104,11 @@ public record Person(String name, int age, String address) {
 public record Person(String name, int age, String address) {}
 ```
 ```java
+// インスタンスの自動生成 
 var marika = new Person("marika",34,"Tokyo");
 ```
 ```java
+// フィールドへのsetter禁止
 marika.setName("Shiotsuki");
 ```
 これが出たらOK！
@@ -107,9 +122,28 @@ marika.setName("Shiotsuki");
 |  ^------------^
 ```
 ```java
+// フィールドのgetter生成
 marika.age();
 これが出たらOK！
 ```
 ```java
 $3 ==> 34
 ```
+```java
+// toString()メソッドの自動実装
+System.out.println(marika); 
+```
+```java
+// レコード型かの確認
+System.out.println(Person.class.isRecord()); 
+```
+```java
+// レコード型の場合のクラスの形取得
+var components = Person.class.getRecordComponents();
+for (var component : components) {
+    System.out.println(component.getName() + ": " + component.getType().getSimpleName());
+}
+```
+
+## 参考
+https://www.infoq.com/jp/articles/java-14-feature-spotlight/
