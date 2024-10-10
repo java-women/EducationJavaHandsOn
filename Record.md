@@ -5,7 +5,7 @@
 これまでの値を受け渡すBeanに新しい書き方が増えた話。  
 現代のプログラミングモデルは、可変クラスではなく、不変のBeanに移行しているので、簡単に対応できるようになった。
 - JavaBeans:可変Beanを取り扱う。  Record:不変Beanを取り扱う。
-- セッター、ゲッター、hashCode、equals、toStringメソッド →　コンストラクタで初期化され、ゲッター、hashCode、equals、toStringのみ。（セッターが削除）
+- セッター、ゲッター、hashCode、equals、toStringメソッド →　Recordは、コンストラクタ、ゲッター、hashCode、equals、toStringのみ。（セッターが削除）
 
 不変データオブジェクトをアプリケーションの基本として考えていく。
 
