@@ -1,0 +1,16 @@
+# Java女子部の紹介+Java in Educationの紹介（5分）
+# Java in Education for JUGSのハンズオン以外の部分をさらっと流す（5分）
+# ハンズオン（30分）
+- JShell (1 min)
+- Launch Multi-File Source-Code Programs（JEP 458）(5 min)　★
+- Implicitly Declared Classes and Instance Main Methods　(5 min)
+  -  Preview Features
+- var (3 min)
+- text blocks (1 min)　★
+- records (5 min)　★
+- switch (8 min) ★
+  - an expression & without a break (時間はswichに含める)
+  - The pattern matching switch (時間はswichに含める)
+- Virtuous Virtual Threads (2 min)　★
+
+# クロージング（5分）
